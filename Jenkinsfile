@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Check Code') {
             steps{
-                git branch: 'main', url: 'https://github.com/jbrooks0929/git-tutorial3.git'
+                git branch: 'master', url: 'https://github.com/jbrooks0929/git-tutorial3.git'
             }
         }
         stage('Build'){
