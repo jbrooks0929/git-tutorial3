@@ -1,10 +1,24 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
+        stage('Check Code') {
+            steps{
+                git 'https://github.com/jbrooks0929/git-tutorial3/'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'echo "building app"'
+            }
+        }
+        stage('Test'){
+            steps{
+                sh 'echo "Running tests"'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh 'echo "deploying"'
             }
         }
     }
