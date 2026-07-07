@@ -3,8 +3,6 @@ pipeline {
     environment {
         IMAGE_NAME = 'jbrooks0929/git-tutorial3'
     }
-   
-
         stage('Build Docker image') {
             steps {
                 bat 'docker build -t %IMAGE_NAME%:latest .'
@@ -30,5 +28,5 @@ pipeline {
                 bat 'echo Deploying application...'
             }
         }
-    }
 }
+
