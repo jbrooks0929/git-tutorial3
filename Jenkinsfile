@@ -3,13 +3,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'jbrooks0929/git-tutorial3'
     }
-    stages {
-        stage('Check Code') {
-            steps {
-                git branch: 'master',
-                    url: 'https://github.com/jbrooks0929/git-tutorial3'
-            }
-        }
+   
 
         stage('Build Docker image') {
             steps {
