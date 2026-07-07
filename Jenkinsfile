@@ -4,14 +4,14 @@ pipeline {
     environment {
         IMAGE_NAME = 'jbrooks0929/git-tutorial3'
     }
-
-    stages {
-
-        stage('Build Docker image') {
-            steps {
-                bat 'docker build -t %IMAGE_NAME%:latest .'
-            }
-        }
+    
+    stage('Check Environment') {
+    steps {
+        bat 'echo PATH=%PATH%'
+        bat 'where docker'
+        bat 'docker --version'
+    }
+}
 
         stage('Push DockerHub') {
             steps {
